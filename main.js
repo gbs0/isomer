@@ -7,6 +7,15 @@ var red = new Color(160, 60, 50);
 var blue = new Color(50, 60, 160);
 var black = new Color(20, 20, 20);
 
-iso.add(Shape.Prism(Point.ORIGIN, 5, 5, 1));
+iso.add(Shape.Prism(Point.ORIGIN, 10, 10, 1));
 iso.add(Shape.Pyramid(Point(0, 2, 1)), black);
 iso.add(Shape.Prism(Point(2, 0, 1)), blue);
+iso.add(Shape.Prism(Point(3, 0, 1)), blue);
+iso.add(Shape.Prism(Point(4, 0, 1)), red);
+
+var step;
+for (let step = 0; step < 5; step++) {
+  // Runs 5 times, with values of step 0 through 4.
+	iso.add(Shape.Prism(Point((step * -1), step, 0)), black);  
+	console.log(step);
+}
